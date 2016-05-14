@@ -1,0 +1,6 @@
+framework module Pods_CalendarMoney {
+  umbrella header "Pods-CalendarMoney-umbrella.h"
+
+  export *
+  module * { export * }
+}
