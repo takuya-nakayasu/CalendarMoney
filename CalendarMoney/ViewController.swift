@@ -42,8 +42,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         calenderCollectionView.backgroundColor = UIColor.whiteColor()
         
         headerTitle.text = changeHeaderTitle(selectedDate) // 追記
-        
-        self.calenderCollectionView!.registerClass(UICollectionView.self, forCellWithReuseIdentifier: "cell")
     }
 
     override func didReceiveMemoryWarning() {
