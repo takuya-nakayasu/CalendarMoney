@@ -100,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-480" y="1197"/>
+            <point key="canvasLocation" x="-78" y="1045"/>
         </scene>
         <!--Money Input View Controller-->
         <scene sceneID="nzb-ND-OIg">
@@ -113,12 +113,56 @@
                     <view key="view" contentMode="scaleToFill" id="2JN-RI-zaa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d2F-nZ-Obg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="109"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPo-w5-PsN">
+                                        <rect key="frame" x="17" y="40" width="75" height="30"/>
+                                        <state key="normal" title="キャンセル"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" id="5zH-rb-S31"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="収支入力" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Elj-6K-8vU">
+                                        <rect key="frame" x="266" y="44" width="68" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMl-3b-wr6">
+                                        <rect key="frame" x="532" y="40" width="30" height="30"/>
+                                        <state key="normal" title="保存"/>
+                                        <connections>
+                                            <action selector="onClickSaveButton:" destination="4qS-Uh-yP0" eventType="touchUpInside" id="yVv-4g-vqX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="0JY-D7-ZmJ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="DuF-Kp-24T"/>
+                                    <constraint firstItem="Elj-6K-8vU" firstAttribute="centerX" secondItem="d2F-nZ-Obg" secondAttribute="centerX" id="WGy-1v-4NK"/>
+                                    <constraint firstItem="uPo-w5-PsN" firstAttribute="leading" secondItem="d2F-nZ-Obg" secondAttribute="leading" constant="17" id="YMh-hV-1eq"/>
+                                    <constraint firstItem="uPo-w5-PsN" firstAttribute="centerY" secondItem="d2F-nZ-Obg" secondAttribute="centerY" id="k7i-VG-guU"/>
+                                    <constraint firstItem="uPo-w5-PsN" firstAttribute="baseline" secondItem="Elj-6K-8vU" secondAttribute="baseline" id="knQ-cR-PKZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZMl-3b-wr6" secondAttribute="trailing" constant="38" id="u6r-OQ-tJC"/>
+                                    <constraint firstItem="Elj-6K-8vU" firstAttribute="baseline" secondItem="ZMl-3b-wr6" secondAttribute="baseline" id="wlv-nI-ghH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RvQ-Jq-VXp" firstAttribute="top" secondItem="d2F-nZ-Obg" secondAttribute="bottom" constant="491" id="4wG-2h-GuJ"/>
+                            <constraint firstItem="d2F-nZ-Obg" firstAttribute="top" secondItem="2JN-RI-zaa" secondAttribute="top" id="7HQ-G4-uP3"/>
+                            <constraint firstItem="d2F-nZ-Obg" firstAttribute="leading" secondItem="2JN-RI-zaa" secondAttribute="leading" id="Dea-j9-iUi"/>
+                            <constraint firstAttribute="trailing" secondItem="d2F-nZ-Obg" secondAttribute="trailing" id="x4x-7I-c2i"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okv-sK-GrJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="354" y="1192"/>
+            <point key="canvasLocation" x="662" y="976"/>
         </scene>
     </scenes>
 </document>

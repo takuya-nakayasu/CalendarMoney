@@ -1,4 +1,3 @@
-
 import RealmSwift
 
 class Spend: Object {
