@@ -41,7 +41,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         calenderCollectionView.dataSource = self
         calenderCollectionView.backgroundColor = UIColor.whiteColor()
         
-        headerTitle.text = changeHeaderTitle(selectedDate) // 追記
+        headerTitle.text = changeHeaderTitle(selectedDate)
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,9 +58,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // Section毎にCellの桁数を変える
         if section == 0 {
-            return 7
+            return 7 // 曜日を表示するセクションだから7
         } else {
-            return dateManager.daysAcquisition() //ここは月によって異なる(後ほど説明します)
+            return dateManager.daysAcquisition() //各月が週の数をいくつ持っているのかを
         }
     }
     
@@ -71,6 +71,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if (indexPath.row % 7 == 0) {
             cell.textLabel.textColor = UIColor.lightRed()
         } else if (indexPath.row % 7 == 6) {
+            cell.textLabel.textColor = UIColor.lightBlue()
+        } else {
             cell.textLabel.textColor = UIColor.grayColor()
         }
         // テキスト配置
