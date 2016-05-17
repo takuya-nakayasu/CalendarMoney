@@ -95,11 +95,30 @@
                         <outlet property="headerNextBtn" destination="S6C-1v-7eh" id="l1Q-Xl-XEw"/>
                         <outlet property="headerPrevBtn" destination="9Ku-tF-m7E" id="ewh-j2-UeW"/>
                         <outlet property="headerTitle" destination="lT6-rR-dfB" id="L5o-D1-gjY"/>
+                        <segue destination="4qS-Uh-yP0" kind="presentation" identifier="toMoneyInput" id="SVa-ke-DHx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-88" y="825"/>
+            <point key="canvasLocation" x="-480" y="1197"/>
+        </scene>
+        <!--Money Input View Controller-->
+        <scene sceneID="nzb-ND-OIg">
+            <objects>
+                <viewController id="4qS-Uh-yP0" customClass="MoneyInputViewController" customModule="CalendarMoney" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tdx-5T-6vd"/>
+                        <viewControllerLayoutGuide type="bottom" id="RvQ-Jq-VXp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2JN-RI-zaa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="okv-sK-GrJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="354" y="1192"/>
         </scene>
     </scenes>
 </document>
