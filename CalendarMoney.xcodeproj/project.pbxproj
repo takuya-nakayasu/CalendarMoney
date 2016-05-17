@@ -16,6 +16,7 @@
 		B0469EC51CE725A400BA7188 /* CalendarMoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0469EC41CE725A400BA7188 /* CalendarMoneyUITests.swift */; };
 		B0469ED31CE82C8F00BA7188 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0469ED21CE82C8F00BA7188 /* DateManager.swift */; };
 		B0469ED51CE82CA800BA7188 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0469ED41CE82CA800BA7188 /* CalendarCell.swift */; };
+		B07AD9231CEB2CD700BDF1E8 /* Spend.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07AD9221CEB2CD700BDF1E8 /* Spend.swift */; };
 		CF8B206B4A797B98ACB9BE56 /* Pods_CalendarMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26DA01C80EE0C88EE6B0FAB /* Pods_CalendarMoney.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		B0469EC61CE725A400BA7188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0469ED21CE82C8F00BA7188 /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		B0469ED41CE82CA800BA7188 /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		B07AD9221CEB2CD700BDF1E8 /* Spend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spend.swift; sourceTree = "<group>"; };
 		D26DA01C80EE0C88EE6B0FAB /* Pods_CalendarMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalendarMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 				B0469EB01CE725A400BA7188 /* Info.plist */,
 				B0469ED21CE82C8F00BA7188 /* DateManager.swift */,
 				B0469ED41CE82CA800BA7188 /* CalendarCell.swift */,
+				B07AD9221CEB2CD700BDF1E8 /* Spend.swift */,
 			);
 			path = CalendarMoney;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			files = (
 				B0469EA71CE725A400BA7188 /* ViewController.swift in Sources */,
 				B0469ED31CE82C8F00BA7188 /* DateManager.swift in Sources */,
+				B07AD9231CEB2CD700BDF1E8 /* Spend.swift in Sources */,
 				B0469EA51CE725A400BA7188 /* AppDelegate.swift in Sources */,
 				B0469ED51CE82CA800BA7188 /* CalendarCell.swift in Sources */,
 			);

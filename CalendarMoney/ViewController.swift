@@ -116,5 +116,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         headerTitle.text = changeHeaderTitle(selectedDate)
     }
     
+    // セルをタップしたら呼び出し
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        print("touch:\(indexPath.row)")
+    }
 }
 
