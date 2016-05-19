@@ -3,7 +3,8 @@ import Charts
 
 class MonthHistoryViewController: UIViewController {
     
-    @IBOutlet var horizontalBarChartView: HorizontalBarChartView!
+    
+    @IBOutlet weak var horizontalBarChartView: HorizontalBarChartView!
     
     var months: [String]!
     
@@ -93,7 +94,7 @@ class MonthHistoryViewController: UIViewController {
     /// 戻るボタンのアクション時に設定したメソッド
     internal func onClickbackButton(sender: UIButton){
         // 金額入力画面に戻る
-        performSegueWithIdentifier("HistoryToMain", sender: nil)
+        performSegueWithIdentifier("historyToCalendar", sender: nil)
     }
     
     

@@ -41,6 +41,13 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48L-lH-xPD">
+                                        <rect key="frame" x="258" y="80" width="85" height="30"/>
+                                        <state key="normal" title="月別支出"/>
+                                        <connections>
+                                            <segue destination="Nee-f5-74F" kind="presentation" id="j7x-PI-xkO"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -101,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-216" y="948"/>
+            <point key="canvasLocation" x="-588" y="1242"/>
         </scene>
         <!--Money Input View Controller-->
         <scene sceneID="nzb-ND-OIg">
@@ -175,10 +182,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48L-lH-xPD">
-                                <rect key="frame" x="87" y="393" width="85" height="30"/>
-                                <state key="normal" title="月別支出"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -206,7 +209,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okv-sK-GrJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="377" y="821"/>
+            <point key="canvasLocation" x="339" y="809"/>
+        </scene>
+        <!--Month History View Controller-->
+        <scene sceneID="LYh-bN-TqW">
+            <objects>
+                <viewController id="Nee-f5-74F" customClass="MonthHistoryViewController" customModule="CalendarMoney" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lf1-uV-guI"/>
+                        <viewControllerLayoutGuide type="bottom" id="dB9-nj-Cty"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aHk-6N-66H">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TLK-A8-s46" customClass="HorizontalBarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="-5" width="600" height="605"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TLK-A8-s46" firstAttribute="bottom" secondItem="dB9-nj-Cty" secondAttribute="top" id="N2z-st-Gwb"/>
+                            <constraint firstItem="TLK-A8-s46" firstAttribute="top" secondItem="aHk-6N-66H" secondAttribute="topMargin" constant="-5" id="eCm-3l-qMO"/>
+                            <constraint firstAttribute="trailing" secondItem="TLK-A8-s46" secondAttribute="trailing" id="gCt-rR-0OX"/>
+                            <constraint firstItem="TLK-A8-s46" firstAttribute="leading" secondItem="aHk-6N-66H" secondAttribute="leading" id="vdp-za-Ko0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="horizontalBarChartView" destination="TLK-A8-s46" id="Hbg-hC-W8E"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="historyToCalendar" id="VWQ-yf-b8l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Pp-nX-YSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="667" y="1198"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="VWQ-yf-b8l"/>
+    </inferredMetricsTieBreakers>
 </document>
