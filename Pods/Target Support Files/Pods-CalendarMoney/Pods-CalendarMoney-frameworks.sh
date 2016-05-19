@@ -84,10 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-CalendarMoney/Charts.framework"
   install_framework "Pods-CalendarMoney/Realm.framework"
   install_framework "Pods-CalendarMoney/RealmSwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-CalendarMoney/Charts.framework"
   install_framework "Pods-CalendarMoney/Realm.framework"
   install_framework "Pods-CalendarMoney/RealmSwift.framework"
 fi

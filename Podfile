@@ -6,7 +6,7 @@ use_frameworks!
 target 'CalendarMoney' do
 
   pod 'RealmSwift'
-
+  pod 'Charts/Realm'
 end
 
 target 'CalendarMoneyTests' do
