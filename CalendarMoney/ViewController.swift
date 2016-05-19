@@ -51,6 +51,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         // ボタンを追加する.
         self.view.addSubview(saveButton)
+        
     }
 
     override func didReceiveMemoryWarning() {
