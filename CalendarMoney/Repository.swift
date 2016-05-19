@@ -31,4 +31,12 @@ public class Repository {
             self.realm.add(spend, update: true)
         }
     }
+    
+    /// Spendを全件取得
+    func findSpendList() -> Results<Spend> {
+        
+        let spends = realm.objects(Spend)
+        
+        return spends
+    }
 }
