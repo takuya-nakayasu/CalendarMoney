@@ -90,6 +90,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             cell.textLabel.text = weekArray[indexPath.row]
         } else {
             cell.textLabel.text = dateManager.conversionDateFormat(indexPath)
+            //日付をタップしたときの背景色
+            cell.selectedBackgroundView = dateManager.cellSelectedBackgroundView(UIColor.lightGrayColor())
         }
         return cell
     }

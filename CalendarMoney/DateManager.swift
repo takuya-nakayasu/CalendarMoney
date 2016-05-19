@@ -80,4 +80,11 @@ class DateManager: NSObject {
         selectedDate = date.monthLaterDate()
         return selectedDate
     }
+    
+    //セル背景色
+    func cellSelectedBackgroundView(color: UIColor) -> UIView {
+        let cellSelectedBackgroundView = UIView()
+        cellSelectedBackgroundView.backgroundColor = color
+        return cellSelectedBackgroundView
+    }
 }
