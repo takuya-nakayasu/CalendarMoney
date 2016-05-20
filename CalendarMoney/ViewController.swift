@@ -8,6 +8,10 @@ extension UIColor {
     class func lightRed() -> UIColor {
         return UIColor(red: 195.0 / 255, green: 123.0 / 255, blue: 175.0 / 255, alpha: 1.0)
     }
+    
+    class func WhiteGray() -> UIColor {
+        return UIColor(red: 231.0 / 255, green: 232.0 / 255, blue: 226.0 / 255, alpha: 1.0)
+    }
 }
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -18,7 +22,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     let daysPerWeek: Int = 7
     let cellMargin: CGFloat = 2.0
     var selectedDate = NSDate()
-    var today: NSDate!
+    var today = NSDate()
     let weekArray = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
     @IBOutlet weak var headerPrevBtn: UIButton!
@@ -90,6 +94,49 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             cell.textLabel.text = weekArray[indexPath.row]
         } else {
             cell.textLabel.text = dateManager.conversionDateFormat(indexPath)
+            
+            //indexPathをyyyy-MM-ddへ変換
+            let yyyyMMddIndexPath = dateManager.nsIndexPathformatYYYYMMDD(indexPath)
+            
+            //今日の年月日をyyyy-MM-ddへ変換
+            let yyyyMMddToday = dateManager.formatYYYYMMDD(today)
+            
+            //表示月をMMへ変換
+            let mmSelectedDate = dateManager.formatMM(selectedDate)
+            
+            //indexPathをMMへ変換
+            //let mmIndexPath = dateManager.nsIndexPathformatMM(indexPath)
+            
+            
+            if (yyyyMMddIndexPath == yyyyMMddToday) {
+                
+                //今日の枠線
+                dateManager.border(cell, borderWidth: 2.0, borderColor: UIColor.greenColor().CGColor)
+                
+            } else {
+                
+                //今日以外の枠線
+                dateManager.border(cell, borderWidth: 1.0, borderColor: UIColor.whiteColor().CGColor)
+            }
+            
+            // バグがあったため一旦コメントアウト
+            /*
+            //前月・次月日付背景色を設定
+            if (((mmSelectedDate - 1) == mmIndexPath) ||
+                ((mmSelectedDate + 1) == mmIndexPath) ||
+                (mmSelectedDate == 12 && mmIndexPath == 1) ||
+                (mmSelectedDate == 1 && mmIndexPath == 12)) {
+                
+                
+                if (yyyyMMddIndexPath == yyyyMMddToday) {
+                    
+                    //枠線をクリア
+                    dateManager.border(cell, borderWidth: 1.0, borderColor: UIColor.whiteColor().CGColor)
+                }
+                
+                cell.backgroundColor = UIColor.WhiteGray()
+            }
+            */
             //日付をタップしたときの背景色
             cell.selectedBackgroundView = dateManager.cellSelectedBackgroundView(UIColor.lightGrayColor())
         }

@@ -87,4 +87,42 @@ class DateManager: NSObject {
         cellSelectedBackgroundView.backgroundColor = color
         return cellSelectedBackgroundView
     }
+    
+    //今日の枠線表示の比較用年月日
+    func nsIndexPathformatYYYYMMDD(indexPath: NSIndexPath) -> String {
+        let formatter: NSDateFormatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.stringFromDate(currentMonthOfDates[indexPath.row] as! NSDate)
+    }
+    
+    //yyyyMMdd変換
+    func formatYYYYMMDD(date: NSDate) -> String {
+        let formatter: NSDateFormatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let yyyyMMdd = formatter.stringFromDate(date)
+        return yyyyMMdd
+    }
+    
+    //MM変換
+    func formatMM(date: NSDate) -> Int {
+        let formatter: NSDateFormatter = NSDateFormatter()
+        formatter.dateFormat = "MM"
+        let mm = formatter.stringFromDate(date)
+        return Int(mm)!
+    }
+    
+    //今月以外の日付背景をグレーにするための比較用月
+    func nsIndexPathformatMM(indexPath: NSIndexPath) -> Int {
+        let formatter: NSDateFormatter = NSDateFormatter()
+        formatter.dateFormat = "MM"
+        return Int(formatter.stringFromDate(currentMonthOfDates[indexPath.row] as! NSDate))!
+    }
+    
+    //枠線
+    func border(cell: AnyObject, borderWidth: CGFloat, borderColor: CGColor){
+        cell.layer.borderWidth = borderWidth
+        cell.layer.borderColor = borderColor
+    }
+    
+    
 }

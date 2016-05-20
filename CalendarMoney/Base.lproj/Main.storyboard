@@ -21,16 +21,16 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hmR-PK-Vuc">
                                 <rect key="frame" x="0.0" y="1" width="600" height="128"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ku-tF-m7E">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ku-tF-m7E">
                                         <rect key="frame" x="36" y="39" width="31" height="30"/>
-                                        <state key="normal" title="Prev"/>
+                                        <state key="normal" title="前月"/>
                                         <connections>
                                             <action selector="tappedHeaderPrevBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RMy-DE-N7M"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6C-1v-7eh">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6C-1v-7eh">
                                         <rect key="frame" x="553" y="39" width="32" height="30"/>
-                                        <state key="normal" title="Next"/>
+                                        <state key="normal" title="次月"/>
                                         <connections>
                                             <action selector="tappedHeaderNextBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d2w-ZF-7S1"/>
                                         </connections>
@@ -41,22 +41,35 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48L-lH-xPD">
-                                        <rect key="frame" x="258" y="80" width="85" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48L-lH-xPD">
+                                        <rect key="frame" x="515" y="65" width="85" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="85" id="2S0-ZJ-07o"/>
+                                        </constraints>
                                         <state key="normal" title="月別支出"/>
                                         <connections>
                                             <segue destination="Nee-f5-74F" kind="presentation" id="j7x-PI-xkO"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkJ-xP-phX">
+                                        <rect key="frame" x="279" y="81" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="S6C-1v-7eh" secondAttribute="trailing" constant="15" id="7EV-dF-1eH"/>
                                     <constraint firstItem="9Ku-tF-m7E" firstAttribute="leading" secondItem="hmR-PK-Vuc" secondAttribute="leading" constant="36" id="Bd0-lP-g5S"/>
+                                    <constraint firstItem="HkJ-xP-phX" firstAttribute="top" secondItem="lT6-rR-dfB" secondAttribute="bottom" constant="17" id="HTF-1c-3EZ"/>
                                     <constraint firstItem="9Ku-tF-m7E" firstAttribute="top" secondItem="hmR-PK-Vuc" secondAttribute="top" constant="39" id="KQs-RJ-zhG"/>
                                     <constraint firstAttribute="bottom" secondItem="9Ku-tF-m7E" secondAttribute="bottom" constant="59" id="Lu5-MZ-mYw"/>
                                     <constraint firstItem="lT6-rR-dfB" firstAttribute="baseline" secondItem="S6C-1v-7eh" secondAttribute="baseline" id="Wgj-DE-D9Z"/>
+                                    <constraint firstAttribute="trailing" secondItem="48L-lH-xPD" secondAttribute="trailing" id="fIb-it-gvE"/>
                                     <constraint firstItem="lT6-rR-dfB" firstAttribute="centerX" secondItem="hmR-PK-Vuc" secondAttribute="centerX" id="gUp-ka-fND"/>
+                                    <constraint firstItem="HkJ-xP-phX" firstAttribute="leading" secondItem="lT6-rR-dfB" secondAttribute="leading" id="j2o-tV-5xd"/>
+                                    <constraint firstItem="48L-lH-xPD" firstAttribute="top" secondItem="hmR-PK-Vuc" secondAttribute="top" constant="65" id="o0E-9o-oDp"/>
                                     <constraint firstItem="9Ku-tF-m7E" firstAttribute="baseline" secondItem="lT6-rR-dfB" secondAttribute="baseline" id="q37-sq-T2Z"/>
                                 </constraints>
                             </view>
@@ -108,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-588" y="1242"/>
+            <point key="canvasLocation" x="-15" y="1425"/>
         </scene>
         <!--Money Input View Controller-->
         <scene sceneID="nzb-ND-OIg">
