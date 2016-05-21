@@ -28,11 +28,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var selectedDate = NSDate()
     var today = NSDate()
     let weekArray = ["日", "月", "火", "水", "木", "金", "土"]
-
+    
+    // 前月ボタン
     @IBOutlet weak var headerPrevBtn: UIButton!
+    // 次月ボタン
     @IBOutlet weak var headerNextBtn: UIButton!
+    // YYYY年M月
     @IBOutlet weak var headerTitle: UILabel!
+    // ヘッダー
     @IBOutlet weak var calenderHeaderView: UIView!
+    // カレンダー
     @IBOutlet weak var calenderCollectionView: UICollectionView!
     
     
@@ -41,6 +46,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         calenderCollectionView.delegate = self
         calenderCollectionView.dataSource = self
+        
+        // カレンダー背景色
         calenderCollectionView.backgroundColor = UIColor.whiteColor()
         
         // カレンダーのヘッダにM/yyyy(今月)を代入
@@ -67,7 +74,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // Dispose of any resources that can be recreated.
     }
     
-    // CollectionViewのSection数を返す
+    // CollectionViewのSection数を返す(セクション０：曜日　セクション１：日付)
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 2
     }
@@ -78,18 +85,31 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if section == 0 {
             return 7 // 曜日を表示するセクションだから7
         } else {
-            return dateManager.daysAcquisition() //各月が週の数をいくつ持っているのかを返す
+            
+            dateManager.daysAcquisition()
+            dateManager.dateForCellAtIndexPath()
+            return dateManager.numberOfItems
+            /*
+             dateManager.daysAcquisition()
+             dateManager.dateForCellAtIndexPath()
+             return dateManager.numberOfItems
+             */
+            //return dateManager.daysAcquisition() //各月が週の数をいくつ持っているのかを返す
         }
     }
     
-    // Cellの内容を設定
+    // Cellが表示されるときに呼ばれる、1個のセルを描画する際に呼び出される
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CalendarCell
+        
+        //セル背景色
+        cell.backgroundColor = UIColor.whiteColor()
+        
         // Cellのテキストカラー
-        // 日は赤
+        // 日曜は赤
         if (indexPath.row % 7 == 0) {
             cell.textLabel.textColor = UIColor.lightRed()
-        // 土は青
+        // 土曜は青
         } else if (indexPath.row % 7 == 6) {
             cell.textLabel.textColor = UIColor.lightBlue()
         } else {
@@ -121,7 +141,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             //indexPathをMMへ変換
             let mmIndexPath = dateManager.nsIndexPathformatMM(indexPath)
             
-            
             if (yyyyMMddIndexPath == yyyyMMddToday) {
                 
                 //今日の枠線
@@ -133,7 +152,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 dateManager.border(cell, borderWidth: 1.0, borderColor: UIColor.whiteColor().CGColor)
             }
             
-            // バグがあったため一旦コメントアウト
             
             //前月・次月日付背景色を設定
             if (((mmSelectedDate - 1) == mmIndexPath) ||
@@ -148,7 +166,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                     dateManager.border(cell, borderWidth: 1.0, borderColor: UIColor.whiteColor().CGColor)
                 }
                 
-                //cell.backgroundColor = UIColor.WhiteGray()
+                // バグがあったため一旦コメントアウト
+                cell.backgroundColor = UIColor.WhiteGray()
             }
             
             //日付をタップしたときの背景色

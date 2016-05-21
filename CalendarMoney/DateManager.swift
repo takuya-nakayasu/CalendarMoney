@@ -50,6 +50,24 @@ class DateManager: NSObject {
     }
     
     // 表記する日にちの取得
+    func dateForCellAtIndexPath() {
+        //月の初日が週の何日目かを計算する
+        let ordinalityOfFirstDay = NSCalendar.currentCalendar().ordinalityOfUnit(NSCalendarUnit.Day, inUnit: NSCalendarUnit.WeekOfMonth, forDate: firstDateOfMonth())
+        
+        for(var i = 0; i < numberOfItems; i++) {
+            
+            //月の初日とindexPath.item番目のセルに表示する日の差
+            let dateComponents = NSDateComponents()
+            
+            dateComponents.day = i - (ordinalityOfFirstDay - 1)
+            
+            //表示する月の初日から上記で計算した差を引いた日付を取得
+            let date = NSCalendar.currentCalendar().dateByAddingComponents(dateComponents, toDate: firstDateOfMonth(), options: NSCalendarOptions(rawValue: 0))!
+            
+            currentMonthOfDates.append(date)
+        }
+    }
+    
     func dateForCellAtIndexPath(numberOfItems: Int) {
         // ①「月の初日が週の何日目か」を計算する
         let ordinalityOfFirstDay = NSCalendar.currentCalendar().ordinalityOfUnit(NSCalendarUnit.Day, inUnit: NSCalendarUnit.WeekOfMonth, forDate: firstDateOfMonth())
