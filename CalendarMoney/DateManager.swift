@@ -1,15 +1,20 @@
 import UIKit
 
 extension NSDate {
+    /**
+     一月前の日付を返す
+    */
     func monthAgoDate() -> NSDate {
-        let addValue = -1
+        let addValue = -1 // 一つ前の月を表示したいので「-1」
         let calendar = NSCalendar.currentCalendar()
         let dateComponents = NSDateComponents()
         dateComponents.month = addValue
         return calendar.dateByAddingComponents(dateComponents, toDate: self, options: NSCalendarOptions(rawValue: 0))!
     }
 
-
+    /**
+     一月後の日付を返す
+     */
     func monthLaterDate() -> NSDate {
         let addValue: Int = 1
         let calendar = NSCalendar.currentCalendar()
@@ -44,7 +49,7 @@ class DateManager: NSObject {
         return firstDateMonth!
     }
     
-    // (1)表記する日にちの取得
+    // 表記する日にちの取得
     func dateForCellAtIndexPath(numberOfItems: Int) {
         // ①「月の初日が週の何日目か」を計算する
         let ordinalityOfFirstDay = NSCalendar.currentCalendar().ordinalityOfUnit(NSCalendarUnit.Day, inUnit: NSCalendarUnit.WeekOfMonth, forDate: firstDateOfMonth())
@@ -59,7 +64,13 @@ class DateManager: NSObject {
         }
     }
     
-    // ⑵表記の変更
+    /**
+     CellのindexPathを日付に変換
+     
+     - parameter indexPath: Cellのインデックス
+     
+     -returns: 日付
+    */
     func conversionDateFormat(indexPath: NSIndexPath) -> String {
         dateForCellAtIndexPath(numberOfItems)
         let formatter: NSDateFormatter = NSDateFormatter()
