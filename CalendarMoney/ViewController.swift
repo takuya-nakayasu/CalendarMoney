@@ -28,6 +28,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var selectedDate = NSDate()
     var today = NSDate()
     let weekArray = ["日", "月", "火", "水", "木", "金", "土"]
+    var calendarLabels: [String] = []
     
     // 前月ボタン
     @IBOutlet weak var headerPrevBtn: UIButton!
@@ -66,6 +67,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         // 支出入力画面遷移ボタンを追加する.
         self.view.addSubview(saveButton)
+        
+        calendarLabels = []
         
     }
 
@@ -173,6 +176,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             //日付をタップしたときの背景色
             cell.selectedBackgroundView = dateManager.cellSelectedBackgroundView(UIColor.lightGrayColor())
         }
+        
+        calendarLabels.append(cell.textLabel.text!)
         return cell
     }
     
@@ -224,12 +229,26 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     // セルをタップしたら呼び出し
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        print("touch:\(indexPath.row)")
+        print("touch:\(calendarLabels[indexPath.row])")
     }
     
     /// 記録ボタンのアクション時に設定したメソッド
     internal func onClickbackButton(sender: UIButton){
         performSegueWithIdentifier("toMoneyInput", sender: nil)
     }
+    
+    @IBAction func swipedRight(sender: UISwipeGestureRecognizer) {
+        selectedDate = dateManager.nextMonth(selectedDate)
+        calenderCollectionView.reloadData()
+        headerTitle.text = changeHeaderTitle(selectedDate)
+    }
+    
+    @IBAction func swipedLeft(sender: UISwipeGestureRecognizer) {
+        selectedDate = dateManager.prevMonth(selectedDate)
+        calenderCollectionView.reloadData()
+        headerTitle.text = changeHeaderTitle(selectedDate)
+    }
+    
+    
 }
 

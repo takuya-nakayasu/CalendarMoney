@@ -105,6 +105,7 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hmR-PK-Vuc" secondAttribute="bottom" constant="471" id="HHi-es-nJS"/>
                             <constraint firstItem="hmR-PK-Vuc" firstAttribute="leading" secondItem="7nr-2s-00v" secondAttribute="leading" id="JF9-W6-uvx"/>
@@ -115,6 +116,10 @@
                             <constraint firstItem="hmR-PK-Vuc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="1" id="tgU-Jb-3E8"/>
                             <constraint firstItem="hmR-PK-Vuc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vYk-eZ-SVn"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="OMM-Pj-OoU" appends="YES" id="vTo-YH-xxx"/>
+                            <outletCollection property="gestureRecognizers" destination="krw-IX-ISn" appends="YES" id="8So-do-7f2"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="calenderCollectionView" destination="7nr-2s-00v" id="beU-P2-kzQ"/>
@@ -126,8 +131,18 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="OMM-Pj-OoU" userLabel="SwipedRight">
+                    <connections>
+                        <action selector="swipedRight:" destination="BYZ-38-t0r" id="H6P-ih-BY0"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="krw-IX-ISn" userLabel="SwipedLeft">
+                    <connections>
+                        <action selector="swipedLeft:" destination="BYZ-38-t0r" id="wjh-X5-Iez"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="568" y="3217"/>
+            <point key="canvasLocation" x="493" y="3366"/>
         </scene>
         <!--Money Input View Controller-->
         <scene sceneID="nzb-ND-OIg">
@@ -197,6 +212,18 @@
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="収支入力:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xST-n7-Uf6">
                                 <rect key="frame" x="94" y="206" width="73" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="日付情報" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybb-9k-Whd">
+                                <rect key="frame" x="94" y="141" width="78" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YYYY/MM/DD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0g-vz-sSH">
+                                <rect key="frame" x="242" y="148" width="135" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
