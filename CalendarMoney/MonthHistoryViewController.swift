@@ -58,30 +58,31 @@ class MonthHistoryViewController: UIViewController {
             month = cal.component(.Month, fromDate: spend.spendDate)
             
             // 支出を月ごとに集計
+            // months = ["3月", "2月", "1月", "12月", "11月", "10月", "9月", "8月", "7月", "6月", "5月", "4月"]
             switch month {
-            case 1:
+            case 3:
                 sumMonth[0] += spend.spendMoney
             case 2:
                 sumMonth[1] += spend.spendMoney
-            case 3:
+            case 1:
                 sumMonth[2] += spend.spendMoney
-            case 4:
+            case 12:
                 sumMonth[3] += spend.spendMoney
-            case 5:
+            case 11:
                 sumMonth[4] += spend.spendMoney
-            case 6:
+            case 10:
                 sumMonth[5] += spend.spendMoney
-            case 7:
+            case 9:
                 sumMonth[6] += spend.spendMoney
             case 8:
                 sumMonth[7] += spend.spendMoney
-            case 9:
+            case 7:
                 sumMonth[8] += spend.spendMoney
-            case 10:
+            case 6:
                 sumMonth[9] += spend.spendMoney
-            case 11:
+            case 5:
                 sumMonth[10] += spend.spendMoney
-            case 12:
+            case 4:
                 sumMonth[11] += spend.spendMoney
             default: break
                 
