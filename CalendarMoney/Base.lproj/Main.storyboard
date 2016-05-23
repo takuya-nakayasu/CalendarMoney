@@ -251,6 +251,7 @@
                     <connections>
                         <outlet property="memoTextVIew" destination="IiZ-u5-FUR" id="oai-Sb-jA0"/>
                         <outlet property="moneyField" destination="Vxe-a5-qdc" id="WbE-nH-GBN"/>
+                        <outlet property="selectDateLabel" destination="f0g-vz-sSH" id="SAn-vt-GhM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okv-sK-GrJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

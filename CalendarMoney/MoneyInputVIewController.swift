@@ -4,10 +4,13 @@ class MoneyInputViewController: UIViewController {
     
     @IBOutlet weak var moneyField: UITextField!
     @IBOutlet weak var memoTextVIew: UITextView!
+    @IBOutlet weak var selectDateLabel: UILabel!
     
     var repo: Repository! = nil
     
     var appDelegate: AppDelegate!
+    
+    var formatter: NSDateFormatter!
     
     
     override func viewDidLoad() {
@@ -17,6 +20,13 @@ class MoneyInputViewController: UIViewController {
         memoTextVIew.layer.shadowOpacity = 0.5
         
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        formatter = NSDateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        
+        var tmpDate = formatter.dateFromString(appDelegate.selectedDate!)!
+        formatter.dateFormat = "yyyy/MM/dd"
+        selectDateLabel.text = formatter.stringFromDate(tmpDate)
         
         repo = Repository()
         
@@ -33,7 +43,6 @@ class MoneyInputViewController: UIViewController {
         
         let spend = Spend()
         
-        let formatter = NSDateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         
         // 既存データのID最大値+1
