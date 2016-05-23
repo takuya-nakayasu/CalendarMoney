@@ -30,6 +30,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     let weekArray = ["日", "月", "火", "水", "木", "金", "土"]
     var calendarLabels: [String] = []
     
+    var appDelegate: AppDelegate!
+    
     // 前月ボタン
     @IBOutlet weak var headerPrevBtn: UIButton!
     // 次月ボタン
@@ -68,8 +70,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // 支出入力画面遷移ボタンを追加する.
         self.view.addSubview(saveButton)
         
-        calendarLabels = []
-        
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,16 +89,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if section == 0 {
             return 7 // 曜日を表示するセクションだから7
         } else {
-            
             dateManager.daysAcquisition()
             dateManager.dateForCellAtIndexPath()
             return dateManager.numberOfItems
-            /*
-             dateManager.daysAcquisition()
-             dateManager.dateForCellAtIndexPath()
-             return dateManager.numberOfItems
-             */
-            //return dateManager.daysAcquisition() //各月が週の数をいくつ持っているのかを返す
         }
     }
     
@@ -175,9 +169,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
             //日付をタップしたときの背景色
             cell.selectedBackgroundView = dateManager.cellSelectedBackgroundView(UIColor.lightGrayColor())
+            
+            calendarLabels.append(cell.textLabel.text!)
         }
         
-        calendarLabels.append(cell.textLabel.text!)
         return cell
     }
     
@@ -218,6 +213,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         selectedDate = dateManager.prevMonth(selectedDate)
         calenderCollectionView.reloadData()
         headerTitle.text = changeHeaderTitle(selectedDate)
+        calendarLabels = []
     }
     
     // 次月ボタンタップ時
@@ -225,11 +221,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         selectedDate = dateManager.nextMonth(selectedDate)
         calenderCollectionView.reloadData()
         headerTitle.text = changeHeaderTitle(selectedDate)
+        calendarLabels = []
     }
     
     // セルをタップしたら呼び出し
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         print("touch:\(calendarLabels[indexPath.row])")
+        print("touch:\(calendarLabels[indexPath.row])/\(headerTitle.text!)")
+        appDelegate.selectedDate = "\(calendarLabels[indexPath.row])/\(headerTitle.text!)"
     }
     
     /// 記録ボタンのアクション時に設定したメソッド
@@ -241,12 +240,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         selectedDate = dateManager.nextMonth(selectedDate)
         calenderCollectionView.reloadData()
         headerTitle.text = changeHeaderTitle(selectedDate)
+        calendarLabels = []
     }
     
     @IBAction func swipedLeft(sender: UISwipeGestureRecognizer) {
         selectedDate = dateManager.prevMonth(selectedDate)
         calenderCollectionView.reloadData()
         headerTitle.text = changeHeaderTitle(selectedDate)
+        calendarLabels = []
     }
     
     

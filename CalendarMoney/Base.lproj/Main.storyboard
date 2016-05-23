@@ -142,7 +142,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="493" y="3366"/>
+            <point key="canvasLocation" x="631" y="3370"/>
         </scene>
         <!--Money Input View Controller-->
         <scene sceneID="nzb-ND-OIg">
