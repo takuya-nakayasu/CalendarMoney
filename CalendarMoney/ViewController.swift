@@ -143,6 +143,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 //今日の枠線
                 dateManager.border(cell, borderWidth: 2.0, borderColor: UIColor.greenColor().CGColor)
                 
+                // 今日の日付をappDelegateに渡す
+                appDelegate.selectedDate = "\(cell.textLabel.text!)/\(headerTitle.text!)"
+                
             } else {
                 
                 //今日以外の枠線
