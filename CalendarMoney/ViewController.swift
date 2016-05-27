@@ -159,15 +159,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 (mmSelectedDate == 12 && mmIndexPath == 1) ||
                 (mmSelectedDate == 1 && mmIndexPath == 12)) {
                 
-                
                 if (yyyyMMddIndexPath == yyyyMMddToday) {
                     
                     //枠線をクリア
                     dateManager.border(cell, borderWidth: 1.0, borderColor: UIColor.whiteColor().CGColor)
                 }
                 
-                // バグがあったため一旦コメントアウト
+                // 表示している月以外の日付の背景をグレーにする
                 cell.backgroundColor = UIColor.WhiteGray()
+                
+                // 表示している月以外の日付はタッチできないようにする
+                cell.userInteractionEnabled = false
+                
             }
             
             //日付をタップしたときの背景色
@@ -229,7 +232,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     // セルをタップしたら呼び出し
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        print("touch:\(calendarLabels[indexPath.row])")
+        print("touch2:\(indexPath.row)")
         print("touch:\(calendarLabels[indexPath.row])/\(headerTitle.text!)")
         appDelegate.selectedDate = "\(calendarLabels[indexPath.row])/\(headerTitle.text!)"
     }

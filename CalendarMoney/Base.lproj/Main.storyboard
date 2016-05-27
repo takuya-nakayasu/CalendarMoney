@@ -144,7 +144,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="631" y="3370"/>
+            <point key="canvasLocation" x="1249" y="998"/>
         </scene>
         <!--Money Input View Controller-->
         <scene sceneID="nzb-ND-OIg">
@@ -301,10 +301,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Pp-nX-YSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079" y="1462"/>
+            <point key="canvasLocation" x="1753" y="1450"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5zH-rb-S31"/>
+        <segue reference="VWQ-yf-b8l"/>
     </inferredMetricsTieBreakers>
 </document>
