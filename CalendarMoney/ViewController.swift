@@ -122,6 +122,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
             //曜日枠線
             dateManager.border(cell, borderWidth: 1.0, borderColor: UIColor.whiteColor().CGColor)
+            
+            // 曜日はタッチできないようにする
+            cell.userInteractionEnabled = false
         } else {
             // indexを日付に変換して代入
             cell.textLabel.text = dateManager.conversionDateFormat(indexPath)
