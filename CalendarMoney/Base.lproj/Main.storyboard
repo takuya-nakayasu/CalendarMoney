@@ -20,8 +20,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmR-PK-Vuc">
-                                <rect key="frame" x="0.0" y="1" width="600" height="128"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hmR-PK-Vuc">
+                                <rect key="frame" x="0.0" y="2" width="600" height="128"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ku-tF-m7E">
                                         <rect key="frame" x="8" y="39" width="31" height="30"/>
@@ -66,7 +66,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="9Ku-tF-m7E" firstAttribute="baseline" secondItem="S6C-1v-7eh" secondAttribute="baseline" id="1Cf-um-yoi"/>
                                     <constraint firstItem="lT6-rR-dfB" firstAttribute="leading" secondItem="HkJ-xP-phX" secondAttribute="leading" id="OMV-2c-mUC"/>
@@ -80,7 +80,7 @@
                                     <constraint firstItem="9Ku-tF-m7E" firstAttribute="top" secondItem="lT6-rR-dfB" secondAttribute="top" id="uTO-kX-wox"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7nr-2s-00v">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7nr-2s-00v">
                                 <rect key="frame" x="0.0" y="128" width="600" height="472"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mJf-Hi-ONj">
                                     <size key="itemSize" width="50" height="50"/>
@@ -123,12 +123,15 @@
                             <outletCollection property="gestureRecognizers" destination="krw-IX-ISn" appends="YES" id="8So-do-7f2"/>
                         </connections>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calenderCollectionView" destination="7nr-2s-00v" id="beU-P2-kzQ"/>
                         <outlet property="calenderHeaderView" destination="hmR-PK-Vuc" id="Cwd-zu-I02"/>
                         <outlet property="headerNextBtn" destination="S6C-1v-7eh" id="l1Q-Xl-XEw"/>
                         <outlet property="headerPrevBtn" destination="9Ku-tF-m7E" id="ewh-j2-UeW"/>
                         <outlet property="headerTitle" destination="lT6-rR-dfB" id="L5o-D1-gjY"/>
+                        <outlet property="sumMonthLabel" destination="HkJ-xP-phX" id="GtU-6f-TeV"/>
                         <segue destination="4qS-Uh-yP0" kind="presentation" identifier="toMoneyInput" id="SVa-ke-DHx"/>
                     </connections>
                 </viewController>
@@ -144,7 +147,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1249" y="998"/>
+            <point key="canvasLocation" x="771" y="1205"/>
         </scene>
         <!--Money Input View Controller-->
         <scene sceneID="nzb-ND-OIg">

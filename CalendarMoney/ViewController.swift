@@ -30,7 +30,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     let weekArray = ["日", "月", "火", "水", "木", "金", "土"]
     var calendarLabels: [String] = []
     
+    var spendMoneys: [Int] = []
+    
     var appDelegate: AppDelegate!
+    
+    let repo = Repository()
+    // 月の支出額合計
+    var sum = 0
     
     // 前月ボタン
     @IBOutlet weak var headerPrevBtn: UIButton!
@@ -42,6 +48,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var calenderHeaderView: UIView!
     // カレンダー
     @IBOutlet weak var calenderCollectionView: UICollectionView!
+    // 金額合計ラベル
+    @IBOutlet weak var sumMonthLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -71,6 +79,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.view.addSubview(saveButton)
         
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        // 今月の合計金額を算出する
+        spendMoneys = []
+        sum = sumSpendMoneyInMonth(today)
+        sumMonthLabel.text = "-\(sum)円"
     }
 
     override func didReceiveMemoryWarning() {
@@ -220,6 +233,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     // 前月ボタンタップ時
     @IBAction func tappedHeaderPrevBtn(sender: UIButton) {
         selectedDate = dateManager.prevMonth(selectedDate)
+        print("selectedDate:\(selectedDate)")
+        sum = sumSpendMoneyInMonth(selectedDate)
+        sumMonthLabel.text = "-\(sum)円"
         calenderCollectionView.reloadData()
         headerTitle.text = changeHeaderTitle(selectedDate)
         calendarLabels = []
@@ -228,6 +244,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     // 次月ボタンタップ時
     @IBAction func tappedHeaderNextBtn(sender: UIButton) {
         selectedDate = dateManager.nextMonth(selectedDate)
+        print("selectedDate:\(selectedDate)")
+        sum = sumSpendMoneyInMonth(selectedDate)
+        sumMonthLabel.text = "-\(sum)円"
         calenderCollectionView.reloadData()
         headerTitle.text = changeHeaderTitle(selectedDate)
         calendarLabels = []
@@ -247,6 +266,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBAction func swipedRight(sender: UISwipeGestureRecognizer) {
         selectedDate = dateManager.nextMonth(selectedDate)
+        print("selectedDate:\(selectedDate)")
+        sum = sumSpendMoneyInMonth(selectedDate)
+        sumMonthLabel.text = "-\(sum)円"
         calenderCollectionView.reloadData()
         headerTitle.text = changeHeaderTitle(selectedDate)
         calendarLabels = []
@@ -254,11 +276,40 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBAction func swipedLeft(sender: UISwipeGestureRecognizer) {
         selectedDate = dateManager.prevMonth(selectedDate)
+        print("selectedDate:\(selectedDate)")
+        sum = sumSpendMoneyInMonth(selectedDate)
+        sumMonthLabel.text = "-\(sum)円"
         calenderCollectionView.reloadData()
         headerTitle.text = changeHeaderTitle(selectedDate)
         calendarLabels = []
     }
     
-    
+    /// 今月の支出金額を集計する
+    func sumSpendMoneyInMonth(day: NSDate) -> Int {
+        
+        let spends = repo.findSpendList()
+        spendMoneys = []
+        
+        let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
+        
+        var equalYear = true
+        var equalMonth = true
+        print("day:\(day)")
+        for spend in spends {
+            
+            // 今年の支出の場合はtrue
+            equalYear = calendar.isDate(spend.spendDate, equalToDate:  day, toUnitGranularity: .NSYearCalendarUnit)
+            
+            // 今月の支出の場合はtrue
+            equalMonth = calendar.isDate(spend.spendDate, equalToDate: day, toUnitGranularity: .NSMonthCalendarUnit)
+            
+            // 今月分の支出のみ集計
+            if equalYear && equalMonth {
+                spendMoneys.append(spend.spendMoney)
+            }
+        }
+        // 消費金額の合計を返却
+        return spendMoneys.reduce(0, combine: { $0 + $1 })
+    }
 }
 

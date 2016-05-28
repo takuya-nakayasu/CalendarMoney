@@ -32,6 +32,7 @@ class DateManager: NSObject {
     let daysPerWeek: Int = 7
     var numberOfItems: Int!
     
+    
     // 月ごとのセルの数を返すメソッド
     func daysAcquisition() -> Int {
         let rangeOfWeeks = NSCalendar.currentCalendar().rangeOfUnit(NSCalendarUnit.WeekOfMonth, inUnit: NSCalendarUnit.Month, forDate: firstDateOfMonth())
@@ -152,6 +153,5 @@ class DateManager: NSObject {
         cell.layer.borderWidth = borderWidth
         cell.layer.borderColor = borderColor
     }
-    
     
 }

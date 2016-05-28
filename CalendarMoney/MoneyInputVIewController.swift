@@ -6,12 +6,11 @@ class MoneyInputViewController: UIViewController {
     @IBOutlet weak var memoTextVIew: UITextView!
     @IBOutlet weak var selectDateLabel: UILabel!
     
-    var repo: Repository! = nil
-    
     var appDelegate: AppDelegate!
     
     var formatter: NSDateFormatter!
     
+    let repo = Repository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +26,6 @@ class MoneyInputViewController: UIViewController {
         var tmpDate = formatter.dateFromString(appDelegate.selectedDate!)!
         formatter.dateFormat = "yyyy/MM/dd"
         selectDateLabel.text = formatter.stringFromDate(tmpDate)
-        
-        repo = Repository()
         
     }
     
