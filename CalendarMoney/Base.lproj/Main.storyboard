@@ -8,6 +8,47 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Input View Controller-->
+        <scene sceneID="gfe-aJ-jPv">
+            <objects>
+                <viewController id="xwG-SZ-p2E" customClass="InputViewController" customModule="CalendarMoney" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Cv-na-jfx"/>
+                        <viewControllerLayoutGuide type="bottom" id="cjM-kR-gjZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FWy-iu-NMK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lk0-4i-c3Y">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" id="bp4-Cb-4Is">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bp4-Cb-4Is" id="JqI-bj-2Cn">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="xwG-SZ-p2E" id="qWp-BX-NQW"/>
+                                    <outlet property="delegate" destination="xwG-SZ-p2E" id="zOx-BB-3eY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="inputTableView" destination="Lk0-4i-c3Y" id="toG-mg-5vE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="49p-Cj-JHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3283" y="889"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -65,16 +106,25 @@
                                             <segue destination="Nee-f5-74F" kind="presentation" id="j7x-PI-xkO"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5g-IY-xAG">
+                                        <rect key="frame" x="450" y="72" width="30" height="30"/>
+                                        <state key="normal" title="2nd"/>
+                                        <connections>
+                                            <segue destination="xwG-SZ-p2E" kind="presentation" id="WKd-Ei-LwR"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="9Ku-tF-m7E" firstAttribute="baseline" secondItem="S6C-1v-7eh" secondAttribute="baseline" id="1Cf-um-yoi"/>
                                     <constraint firstItem="lT6-rR-dfB" firstAttribute="leading" secondItem="HkJ-xP-phX" secondAttribute="leading" id="OMV-2c-mUC"/>
+                                    <constraint firstItem="u5g-IY-xAG" firstAttribute="baseline" secondItem="48L-lH-xPD" secondAttribute="baseline" id="Psf-aJ-rH4"/>
                                     <constraint firstItem="S6C-1v-7eh" firstAttribute="trailing" secondItem="48L-lH-xPD" secondAttribute="trailing" id="Tnk-aX-JkE"/>
                                     <constraint firstItem="S6C-1v-7eh" firstAttribute="trailing" secondItem="hmR-PK-Vuc" secondAttribute="trailingMargin" id="VZy-R2-b3T"/>
                                     <constraint firstItem="48L-lH-xPD" firstAttribute="top" secondItem="S6C-1v-7eh" secondAttribute="bottom" constant="3" id="Wwh-AD-Z1M"/>
                                     <constraint firstItem="9Ku-tF-m7E" firstAttribute="leading" secondItem="hmR-PK-Vuc" secondAttribute="leadingMargin" id="XBO-rg-rBt"/>
                                     <constraint firstItem="9Ku-tF-m7E" firstAttribute="top" secondItem="hmR-PK-Vuc" secondAttribute="top" constant="39" id="bG1-v6-Cg6"/>
+                                    <constraint firstItem="48L-lH-xPD" firstAttribute="leading" secondItem="u5g-IY-xAG" secondAttribute="trailing" constant="27" id="bnp-a3-irv"/>
                                     <constraint firstItem="lT6-rR-dfB" firstAttribute="centerX" secondItem="hmR-PK-Vuc" secondAttribute="centerX" id="dhB-I6-XgT"/>
                                     <constraint firstItem="HkJ-xP-phX" firstAttribute="bottom" secondItem="48L-lH-xPD" secondAttribute="bottom" id="qlS-SK-ygo"/>
                                     <constraint firstItem="9Ku-tF-m7E" firstAttribute="top" secondItem="lT6-rR-dfB" secondAttribute="top" id="uTO-kX-wox"/>
@@ -147,7 +197,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="771" y="1205"/>
+            <point key="canvasLocation" x="876" y="1746"/>
         </scene>
         <!--Money Input View Controller-->
         <scene sceneID="nzb-ND-OIg">
