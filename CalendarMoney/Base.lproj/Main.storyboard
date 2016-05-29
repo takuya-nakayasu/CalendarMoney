@@ -197,7 +197,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="876" y="1746"/>
+            <point key="canvasLocation" x="412" y="1580"/>
         </scene>
         <!--Money Input View Controller-->
         <scene sceneID="nzb-ND-OIg">
@@ -334,17 +334,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4a-Iw-vHH">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="62"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月別支出" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3i5-SO-j8S">
+                                        <rect key="frame" x="266" y="20" width="68" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="3i5-SO-j8S" firstAttribute="centerX" secondItem="k4a-Iw-vHH" secondAttribute="centerX" id="DxW-jP-QW8"/>
+                                    <constraint firstItem="3i5-SO-j8S" firstAttribute="centerY" secondItem="k4a-Iw-vHH" secondAttribute="centerY" id="UMA-bK-3ye"/>
+                                    <constraint firstItem="3i5-SO-j8S" firstAttribute="top" secondItem="k4a-Iw-vHH" secondAttribute="top" constant="20" id="lhA-Oj-ks8"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TLK-A8-s46" customClass="HorizontalBarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="-5" width="600" height="605"/>
+                                <rect key="frame" x="0.0" y="72" width="600" height="528"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TLK-A8-s46" firstAttribute="bottom" secondItem="dB9-nj-Cty" secondAttribute="top" id="N2z-st-Gwb"/>
-                            <constraint firstItem="TLK-A8-s46" firstAttribute="top" secondItem="aHk-6N-66H" secondAttribute="topMargin" constant="-5" id="eCm-3l-qMO"/>
-                            <constraint firstAttribute="trailing" secondItem="TLK-A8-s46" secondAttribute="trailing" id="gCt-rR-0OX"/>
-                            <constraint firstItem="TLK-A8-s46" firstAttribute="leading" secondItem="aHk-6N-66H" secondAttribute="leading" id="vdp-za-Ko0"/>
+                            <constraint firstItem="k4a-Iw-vHH" firstAttribute="leading" secondItem="TLK-A8-s46" secondAttribute="leading" id="0Mp-2F-afM"/>
+                            <constraint firstItem="k4a-Iw-vHH" firstAttribute="trailing" secondItem="TLK-A8-s46" secondAttribute="trailing" id="0qd-l3-6yl"/>
+                            <constraint firstItem="TLK-A8-s46" firstAttribute="top" secondItem="k4a-Iw-vHH" secondAttribute="bottom" constant="10" id="9yQ-Ot-3Zo"/>
+                            <constraint firstItem="k4a-Iw-vHH" firstAttribute="leading" secondItem="aHk-6N-66H" secondAttribute="leading" id="FeL-Zk-245"/>
+                            <constraint firstItem="TLK-A8-s46" firstAttribute="bottom" secondItem="dB9-nj-Cty" secondAttribute="top" id="KI3-WL-Pxn"/>
+                            <constraint firstAttribute="trailing" secondItem="k4a-Iw-vHH" secondAttribute="trailing" id="S0m-Nd-vp2"/>
+                            <constraint firstItem="k4a-Iw-vHH" firstAttribute="top" secondItem="aHk-6N-66H" secondAttribute="top" id="dAY-Ba-xuf"/>
                         </constraints>
                     </view>
                     <connections>
@@ -354,7 +374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Pp-nX-YSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1753" y="1450"/>
+            <point key="canvasLocation" x="2238" y="1769"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
