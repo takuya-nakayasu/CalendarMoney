@@ -9,7 +9,7 @@ class InputViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var inputTableView: UITableView!
     
     // セクションに表示するタイトル
-    private let sectionTitle = ["日付情報", "収支入力"]
+    private let sectionTitle = ["日付情報", "カテゴリ選択", "収支入力"]
     
     var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
@@ -29,7 +29,10 @@ class InputViewController: UIViewController, UITableViewDelegate, UITableViewDat
             // セクション0には日付情報を表示
             return 1
         } else if section == 1 {
-            // セクション1には金額欄とメモ欄を表示
+            
+            return 1
+        } else if section == 2{
+            // セクション2には金額欄とメモ欄を表示
             return 2
         } else {
             return 0
@@ -37,7 +40,9 @@ class InputViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.section == 1 && indexPath.row == 1 {
+        if indexPath.section == 2 && indexPath.row == 1 {
+            return 110
+        } else if indexPath.section == 1 {
             return 110
         } else {
             return 50
@@ -77,7 +82,7 @@ class InputViewController: UIViewController, UITableViewDelegate, UITableViewDat
             formatter.dateFormat = "yyyy年 MM月 dd日"
             cell.textLabel?.text = formatter.stringFromDate(tmpDate)
             
-        } else if indexPath.section == 1 {
+        } else if indexPath.section == 2 {
             if indexPath.row == 0 {
                 cell.textLabel?.text = "入力："
                 // セルの右側にtextFieldを設置
