@@ -9,7 +9,10 @@ class InputViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var inputTableView: UITableView!
     
     // セクションに表示するタイトル
-    private let sectionTitle = ["日付情報", "カテゴリ選択", "収支入力"]
+    // private let sectionTitle = ["日付情報", "カテゴリ選択", "収支入力"]
+    private let sectionTitle = ["日付情報", "収支入力"]
+    
+    // private let category = ["食費", "交通費", "日用品", "交際費"]
     
     var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
@@ -30,7 +33,7 @@ class InputViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return 1
         } else if section == 1 {
             
-            return 1
+            return 4
         } else if section == 2{
             // セクション2には金額欄とメモ欄を表示
             return 2
@@ -43,7 +46,7 @@ class InputViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if indexPath.section == 2 && indexPath.row == 1 {
             return 110
         } else if indexPath.section == 1 {
-            return 110
+            return 50
         } else {
             return 50
         }
@@ -67,6 +70,13 @@ class InputViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         // 線をつけないと透明で見れない
         memoTextView.layer.borderWidth = 1
+        /*
+        var cellSelectedBgView = UIView()
+        
+        cell.selectedBackgroundView?.backgroundColor = UIColor.WhiteGray()
+        
+        cell.selectedBackgroundView = cellSelectedBgView
+        */
         
         // フォントの設定をする
         memoTextView.font = UIFont.systemFontOfSize(CGFloat(15))
@@ -82,15 +92,22 @@ class InputViewController: UIViewController, UITableViewDelegate, UITableViewDat
             formatter.dateFormat = "yyyy年 MM月 dd日"
             cell.textLabel?.text = formatter.stringFromDate(tmpDate)
             
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
+            
         } else if indexPath.section == 2 {
             if indexPath.row == 0 {
                 cell.textLabel?.text = "入力："
                 // セルの右側にtextFieldを設置
                 cell.accessoryView = moneyInputTextField
+                cell.selectionStyle = UITableViewCellSelectionStyle.None
             } else if indexPath.row == 1 {
                 cell.textLabel?.text = "メモ："
                 cell.accessoryView = memoTextView
+                cell.selectionStyle = UITableViewCellSelectionStyle.None
             }
+        } else if indexPath.section == 1 {
+            cell.textLabel?.text = category[indexPath.row]
+            //cell.userInteractionEnabled = true
         }
         
         return cell
