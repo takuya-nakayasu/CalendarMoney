@@ -7,6 +7,8 @@ import UIKit
 class InputViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var inputTableView: UITableView!
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerTitle: UILabel!
     
     // セクションに表示するタイトル
     private let sectionTitle = ["日付情報", "収支入力"]
@@ -18,6 +20,11 @@ class InputViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         // tableViewのみ選択不可に(Cell上のtextView/textFIeldは選択可)
         inputTableView.allowsSelection = false
+        
+        headerTitle.font = UIFont.boldSystemFontOfSize(UIFont.labelFontSize())
+        
+        //headerView.layer.borderColor = UIColor.blackColor().CGColor
+        //headerView.layer.borderWidth = 1.0
     }
     
     override func didReceiveMemoryWarning() {

@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lk0-4i-c3Y">
-                                <rect key="frame" x="0.0" y="82" width="600" height="518"/>
+                                <rect key="frame" x="0.0" y="70" width="600" height="530"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" id="bp4-Cb-4Is">
@@ -41,16 +41,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uA6-aw-JpH">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="62"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支出入力" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2Z-Ty-rfu">
-                                        <rect key="frame" x="266" y="20" width="68" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2m-Ya-qaE">
                                         <rect key="frame" x="8" y="16" width="85" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="85" id="86B-gb-PFd"/>
+                                            <constraint firstAttribute="width" constant="85" id="Bcb-cs-zoz"/>
                                         </constraints>
                                         <state key="normal" title="キャンセル"/>
                                         <connections>
@@ -61,35 +55,45 @@
                                         <rect key="frame" x="562" y="16" width="30" height="30"/>
                                         <state key="normal" title="保存"/>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支出入力" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2Z-Ty-rfu">
+                                        <rect key="frame" x="262" y="20" width="76" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="76" id="g1P-YD-Aq7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="o2m-Ya-qaE" firstAttribute="leading" secondItem="uA6-aw-JpH" secondAttribute="leadingMargin" id="2FJ-aI-Xwp"/>
-                                    <constraint firstItem="o2m-Ya-qaE" firstAttribute="top" secondItem="uA6-aw-JpH" secondAttribute="top" constant="16" id="7Cu-bl-Sym"/>
-                                    <constraint firstItem="C2Z-Ty-rfu" firstAttribute="baseline" secondItem="ReU-DZ-kM7" secondAttribute="baseline" id="a1v-tG-lQb"/>
-                                    <constraint firstItem="o2m-Ya-qaE" firstAttribute="centerY" secondItem="uA6-aw-JpH" secondAttribute="centerY" id="bAe-ok-Edw"/>
-                                    <constraint firstItem="C2Z-Ty-rfu" firstAttribute="centerX" secondItem="uA6-aw-JpH" secondAttribute="centerX" id="gDJ-E7-kJU"/>
-                                    <constraint firstItem="o2m-Ya-qaE" firstAttribute="baseline" secondItem="C2Z-Ty-rfu" secondAttribute="baseline" id="rmx-fg-tJw"/>
-                                    <constraint firstItem="ReU-DZ-kM7" firstAttribute="trailing" secondItem="uA6-aw-JpH" secondAttribute="trailingMargin" id="uVx-cJ-kSc"/>
+                                    <constraint firstItem="o2m-Ya-qaE" firstAttribute="centerY" secondItem="uA6-aw-JpH" secondAttribute="centerY" id="Feu-mR-LEp"/>
+                                    <constraint firstItem="ReU-DZ-kM7" firstAttribute="trailing" secondItem="uA6-aw-JpH" secondAttribute="trailingMargin" id="H2j-Dm-X8I"/>
+                                    <constraint firstItem="C2Z-Ty-rfu" firstAttribute="centerX" secondItem="uA6-aw-JpH" secondAttribute="centerX" id="PEx-NC-9jX"/>
+                                    <constraint firstItem="o2m-Ya-qaE" firstAttribute="baseline" secondItem="C2Z-Ty-rfu" secondAttribute="baseline" id="cah-rw-tDF"/>
+                                    <constraint firstItem="o2m-Ya-qaE" firstAttribute="leading" secondItem="uA6-aw-JpH" secondAttribute="leadingMargin" id="fwK-Po-EfG"/>
+                                    <constraint firstItem="o2m-Ya-qaE" firstAttribute="top" secondItem="uA6-aw-JpH" secondAttribute="top" constant="16" id="nCT-b6-4np"/>
+                                    <constraint firstItem="C2Z-Ty-rfu" firstAttribute="baseline" secondItem="ReU-DZ-kM7" secondAttribute="baseline" id="zYb-Nv-QLg"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Lk0-4i-c3Y" firstAttribute="top" secondItem="uA6-aw-JpH" secondAttribute="bottom" constant="20" id="K18-Eb-jua"/>
-                            <constraint firstAttribute="trailing" secondItem="uA6-aw-JpH" secondAttribute="trailing" id="W8k-7d-Rij"/>
-                            <constraint firstItem="Lk0-4i-c3Y" firstAttribute="bottom" secondItem="cjM-kR-gjZ" secondAttribute="top" id="ZDp-ck-XHJ"/>
-                            <constraint firstItem="uA6-aw-JpH" firstAttribute="leading" secondItem="FWy-iu-NMK" secondAttribute="leading" id="aOX-7c-f0R"/>
-                            <constraint firstItem="uA6-aw-JpH" firstAttribute="leading" secondItem="Lk0-4i-c3Y" secondAttribute="leading" id="ikL-nf-3Ol"/>
-                            <constraint firstItem="uA6-aw-JpH" firstAttribute="top" secondItem="FWy-iu-NMK" secondAttribute="top" id="sPw-El-WDD"/>
-                            <constraint firstItem="uA6-aw-JpH" firstAttribute="trailing" secondItem="Lk0-4i-c3Y" secondAttribute="trailing" id="tNe-ND-hDi"/>
+                            <constraint firstItem="Lk0-4i-c3Y" firstAttribute="top" secondItem="uA6-aw-JpH" secondAttribute="bottom" constant="8" symbolic="YES" id="D6R-Fq-AEO"/>
+                            <constraint firstItem="uA6-aw-JpH" firstAttribute="leading" secondItem="FWy-iu-NMK" secondAttribute="leading" id="DOd-b7-CH8"/>
+                            <constraint firstItem="uA6-aw-JpH" firstAttribute="trailing" secondItem="Lk0-4i-c3Y" secondAttribute="trailing" id="Eqv-V7-g2J"/>
+                            <constraint firstItem="uA6-aw-JpH" firstAttribute="top" secondItem="FWy-iu-NMK" secondAttribute="top" id="PRj-hJ-gar"/>
+                            <constraint firstItem="uA6-aw-JpH" firstAttribute="leading" secondItem="Lk0-4i-c3Y" secondAttribute="leading" id="epN-1o-ljU"/>
+                            <constraint firstItem="Lk0-4i-c3Y" firstAttribute="bottom" secondItem="cjM-kR-gjZ" secondAttribute="top" id="tML-pw-tqf"/>
+                            <constraint firstAttribute="trailing" secondItem="uA6-aw-JpH" secondAttribute="trailing" id="uYu-gc-p7s"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="r1b-ij-nAb" appends="YES" id="cjo-ko-vDh"/>
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="headerTitle" destination="C2Z-Ty-rfu" id="4vZ-Me-HS7"/>
+                        <outlet property="headerView" destination="uA6-aw-JpH" id="qe7-ux-ZNh"/>
                         <outlet property="inputTableView" destination="Lk0-4i-c3Y" id="toG-mg-5vE"/>
                     </connections>
                 </viewController>
@@ -100,7 +104,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3701" y="1217"/>
+            <point key="canvasLocation" x="3469" y="1483"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
