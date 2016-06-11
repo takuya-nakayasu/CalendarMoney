@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BDp-NJ-eit">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -8,7 +8,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Input View Controller-->
+        <!--Item-->
         <scene sceneID="gfe-aJ-jPv">
             <objects>
                 <viewController id="xwG-SZ-p2E" customClass="InputViewController" customModule="CalendarMoney" customModuleProvider="target" sceneMemberID="viewController">
@@ -91,6 +91,7 @@
                             <outletCollection property="gestureRecognizers" destination="r1b-ij-nAb" appends="YES" id="cjo-ko-vDh"/>
                         </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="iOq-oW-Wee"/>
                     <connections>
                         <outlet property="headerTitle" destination="C2Z-Ty-rfu" id="4vZ-Me-HS7"/>
                         <outlet property="headerView" destination="uA6-aw-JpH" id="qe7-ux-ZNh"/>
@@ -104,9 +105,9 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2204" y="1518"/>
+            <point key="canvasLocation" x="2743" y="-1495"/>
         </scene>
-        <!--View Controller-->
+        <!--カレンダー-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CalendarMoney" customModuleProvider="target" colorLabel="IBBuiltInLabel-Orange" sceneMemberID="viewController">
@@ -124,7 +125,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ku-tF-m7E">
                                         <rect key="frame" x="8" y="39" width="31" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="31" id="z8M-l7-r0l"/>
+                                            <constraint firstAttribute="width" constant="31" id="ThI-hg-LR9"/>
                                         </constraints>
                                         <state key="normal" title="前月"/>
                                         <connections>
@@ -146,21 +147,11 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6C-1v-7eh">
                                         <rect key="frame" x="560" y="39" width="32" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="32" id="nxM-VR-bTz"/>
+                                            <constraint firstAttribute="width" constant="32" id="ZBf-Zv-cpd"/>
                                         </constraints>
                                         <state key="normal" title="次月"/>
                                         <connections>
                                             <action selector="tappedHeaderNextBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d2w-ZF-7S1"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48L-lH-xPD">
-                                        <rect key="frame" x="507" y="72" width="85" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="85" id="weN-Y9-Zha"/>
-                                        </constraints>
-                                        <state key="normal" title="月別支出"/>
-                                        <connections>
-                                            <segue destination="Nee-f5-74F" kind="presentation" id="j7x-PI-xkO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5g-IY-xAG">
@@ -173,19 +164,17 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="S6C-1v-7eh" firstAttribute="trailing" secondItem="48L-lH-xPD" secondAttribute="trailing" id="20q-ev-jxZ"/>
-                                    <constraint firstItem="9Ku-tF-m7E" firstAttribute="leading" secondItem="hmR-PK-Vuc" secondAttribute="leadingMargin" id="Axr-ce-ohH"/>
-                                    <constraint firstAttribute="bottom" secondItem="HkJ-xP-phX" secondAttribute="bottom" constant="26" id="EYC-ek-ppx"/>
-                                    <constraint firstItem="u5g-IY-xAG" firstAttribute="baseline" secondItem="48L-lH-xPD" secondAttribute="baseline" id="LOD-oE-CqJ"/>
-                                    <constraint firstItem="lT6-rR-dfB" firstAttribute="leading" secondItem="HkJ-xP-phX" secondAttribute="leading" id="UNW-fd-9K0"/>
-                                    <constraint firstItem="48L-lH-xPD" firstAttribute="leading" secondItem="u5g-IY-xAG" secondAttribute="trailing" constant="27" id="c9A-6m-efa"/>
-                                    <constraint firstItem="lT6-rR-dfB" firstAttribute="centerX" secondItem="hmR-PK-Vuc" secondAttribute="centerX" id="d3M-kF-Dtu"/>
-                                    <constraint firstItem="S6C-1v-7eh" firstAttribute="trailing" secondItem="hmR-PK-Vuc" secondAttribute="trailingMargin" id="g5g-mp-cK9"/>
-                                    <constraint firstItem="9Ku-tF-m7E" firstAttribute="baseline" secondItem="S6C-1v-7eh" secondAttribute="baseline" id="igY-1T-rRP"/>
-                                    <constraint firstItem="9Ku-tF-m7E" firstAttribute="top" secondItem="lT6-rR-dfB" secondAttribute="top" id="pMu-dc-TOB"/>
-                                    <constraint firstItem="9Ku-tF-m7E" firstAttribute="top" secondItem="hmR-PK-Vuc" secondAttribute="top" constant="39" id="xFd-0n-WvA"/>
-                                    <constraint firstItem="HkJ-xP-phX" firstAttribute="bottom" secondItem="u5g-IY-xAG" secondAttribute="bottom" id="yLO-oY-Pms"/>
-                                    <constraint firstItem="48L-lH-xPD" firstAttribute="top" secondItem="S6C-1v-7eh" secondAttribute="bottom" constant="3" id="zm4-oL-Rxr"/>
+                                    <constraint firstAttribute="trailing" secondItem="u5g-IY-xAG" secondAttribute="trailing" constant="120" id="0DS-X7-fI6"/>
+                                    <constraint firstItem="lT6-rR-dfB" firstAttribute="centerX" secondItem="hmR-PK-Vuc" secondAttribute="centerX" id="0IV-50-0mW"/>
+                                    <constraint firstItem="9Ku-tF-m7E" firstAttribute="leading" secondItem="hmR-PK-Vuc" secondAttribute="leadingMargin" id="5HV-CI-B2r"/>
+                                    <constraint firstItem="9Ku-tF-m7E" firstAttribute="top" secondItem="hmR-PK-Vuc" secondAttribute="top" constant="39" id="5QL-dK-A0I"/>
+                                    <constraint firstItem="S6C-1v-7eh" firstAttribute="trailing" secondItem="hmR-PK-Vuc" secondAttribute="trailingMargin" id="JID-qy-72m"/>
+                                    <constraint firstItem="9Ku-tF-m7E" firstAttribute="top" secondItem="lT6-rR-dfB" secondAttribute="top" id="MAs-YF-0x3"/>
+                                    <constraint firstItem="HkJ-xP-phX" firstAttribute="top" secondItem="lT6-rR-dfB" secondAttribute="bottom" constant="21" id="QqQ-GB-xdv"/>
+                                    <constraint firstItem="HkJ-xP-phX" firstAttribute="bottom" secondItem="u5g-IY-xAG" secondAttribute="bottom" id="UY7-Ht-Mux"/>
+                                    <constraint firstItem="9Ku-tF-m7E" firstAttribute="baseline" secondItem="S6C-1v-7eh" secondAttribute="baseline" id="WWF-Os-rSr"/>
+                                    <constraint firstItem="lT6-rR-dfB" firstAttribute="leading" secondItem="HkJ-xP-phX" secondAttribute="leading" id="dMA-Eb-3n8"/>
+                                    <constraint firstAttribute="bottom" secondItem="HkJ-xP-phX" secondAttribute="bottom" constant="26" id="foB-CK-q0Z"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7nr-2s-00v">
@@ -217,19 +206,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="hmR-PK-Vuc" secondAttribute="trailing" id="3ol-Ql-B89"/>
-                            <constraint firstAttribute="bottom" secondItem="7nr-2s-00v" secondAttribute="bottom" id="Ckl-dc-bZA"/>
-                            <constraint firstItem="hmR-PK-Vuc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="2" id="N2F-xA-PT5"/>
-                            <constraint firstItem="hmR-PK-Vuc" firstAttribute="leading" secondItem="7nr-2s-00v" secondAttribute="leading" id="eAP-fV-WnH"/>
-                            <constraint firstItem="7nr-2s-00v" firstAttribute="top" secondItem="hmR-PK-Vuc" secondAttribute="bottom" constant="50" id="jRo-jL-t8y"/>
-                            <constraint firstItem="hmR-PK-Vuc" firstAttribute="trailing" secondItem="7nr-2s-00v" secondAttribute="trailing" id="lfI-0v-J3L"/>
-                            <constraint firstItem="hmR-PK-Vuc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ozq-ck-bbT"/>
+                            <constraint firstItem="hmR-PK-Vuc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8GP-oj-SCM"/>
+                            <constraint firstAttribute="bottom" secondItem="7nr-2s-00v" secondAttribute="bottom" id="BH9-Ng-63O"/>
+                            <constraint firstItem="hmR-PK-Vuc" firstAttribute="trailing" secondItem="7nr-2s-00v" secondAttribute="trailing" id="DuV-YF-cQN"/>
+                            <constraint firstItem="7nr-2s-00v" firstAttribute="top" secondItem="hmR-PK-Vuc" secondAttribute="bottom" constant="50" id="FOs-QA-3x0"/>
+                            <constraint firstItem="hmR-PK-Vuc" firstAttribute="leading" secondItem="7nr-2s-00v" secondAttribute="leading" id="dGj-Wl-Yob"/>
+                            <constraint firstItem="hmR-PK-Vuc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="2" id="wth-xA-XUC"/>
+                            <constraint firstAttribute="trailing" secondItem="hmR-PK-Vuc" secondAttribute="trailing" id="wxd-se-bXz"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="OMM-Pj-OoU" appends="YES" id="vTo-YH-xxx"/>
                             <outletCollection property="gestureRecognizers" destination="krw-IX-ISn" appends="YES" id="8So-do-7f2"/>
                         </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" title="カレンダー" id="4Uf-zc-wJ4"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -254,45 +244,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2321" y="743"/>
-        </scene>
-        <!--Item 2-->
-        <scene sceneID="BFw-Ur-g5N">
-            <objects>
-                <viewController id="VZ7-8q-Tln" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ubf-Wi-xzk"/>
-                        <viewControllerLayoutGuide type="bottom" id="bbH-5W-jsz"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mqg-9Y-70b">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Vbz-pu-87s"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ttj-KM-ENR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2667" y="578"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="DtP-F5-Nil">
-            <objects>
-                <viewController id="1hn-bq-syt" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JB6-kk-Uje"/>
-                        <viewControllerLayoutGuide type="bottom" id="TDl-Gv-v4g"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Z2q-70-egI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="AWd-Zq-uNg"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0mC-3y-Fc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2667" y="-83"/>
+            <point key="canvasLocation" x="2540" y="203"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="01w-PP-UO1">
@@ -304,13 +256,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="1hn-bq-syt" kind="relationship" relationship="viewControllers" id="kpf-y4-iPA"/>
-                        <segue destination="VZ7-8q-Tln" kind="relationship" relationship="viewControllers" id="KWl-B7-o51"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="eix-Wx-iXx"/>
+                        <segue destination="Nee-f5-74F" kind="relationship" relationship="viewControllers" id="cO5-6i-Ndt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rPl-ya-wCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1889" y="297"/>
+            <point key="canvasLocation" x="1948" y="-1407"/>
         </scene>
         <!--Money Input View Controller-->
         <scene sceneID="nzb-ND-OIg">
@@ -435,7 +387,7 @@
             </objects>
             <point key="canvasLocation" x="-643" y="2175"/>
         </scene>
-        <!--Month History View Controller-->
+        <!--支出分析-->
         <scene sceneID="LYh-bN-TqW">
             <objects>
                 <viewController id="Nee-f5-74F" customClass="MonthHistoryViewController" customModule="CalendarMoney" customModuleProvider="target" sceneMemberID="viewController">
@@ -464,7 +416,7 @@
                                     <constraint firstItem="3i5-SO-j8S" firstAttribute="top" secondItem="k4a-Iw-vHH" secondAttribute="top" constant="20" id="lhA-Oj-ks8"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TLK-A8-s46" customClass="HorizontalBarChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TLK-A8-s46" customClass="HorizontalBarChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="72" width="600" height="528"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -480,6 +432,7 @@
                             <constraint firstItem="k4a-Iw-vHH" firstAttribute="top" secondItem="aHk-6N-66H" secondAttribute="top" id="dAY-Ba-xuf"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="支出分析" id="C9M-Gc-f18"/>
                     <connections>
                         <outlet property="horizontalBarChartView" destination="TLK-A8-s46" id="Hbg-hC-W8E"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="historyToCalendar" id="VWQ-yf-b8l"/>
@@ -487,10 +440,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Pp-nX-YSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4504" y="1439"/>
+            <point key="canvasLocation" x="926" y="190"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rln-az-vPu"/>
+        <segue reference="eix-Wx-iXx"/>
     </inferredMetricsTieBreakers>
 </document>
