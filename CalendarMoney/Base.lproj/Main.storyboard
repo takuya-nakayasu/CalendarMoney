@@ -45,6 +45,9 @@
                                             <constraint firstAttribute="width" constant="85" id="syL-vI-Kc6"/>
                                         </constraints>
                                         <state key="normal" title="キャンセル"/>
+                                        <connections>
+                                            <segue destination="BDp-NJ-eit" kind="presentation" id="2gE-iy-EDR"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReU-DZ-kM7">
                                         <rect key="frame" x="562" y="16" width="30" height="30"/>
@@ -104,7 +107,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3242" y="-1639"/>
+            <point key="canvasLocation" x="1885" y="-1694"/>
         </scene>
         <!--カレンダー-->
         <scene sceneID="tne-QT-ifu">
@@ -242,7 +245,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2188" y="427"/>
+            <point key="canvasLocation" x="1932" y="-565"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="01w-PP-UO1">
@@ -260,7 +263,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rPl-ya-wCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2379" y="-1617"/>
+            <point key="canvasLocation" x="1049" y="-1661"/>
         </scene>
         <!--支出分析-->
         <scene sceneID="LYh-bN-TqW">
@@ -314,7 +317,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Pp-nX-YSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1359" y="-814"/>
+            <point key="canvasLocation" x="447" y="-450"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="YZn-90-zVi"/>
+    </inferredMetricsTieBreakers>
 </document>
