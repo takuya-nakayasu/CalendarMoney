@@ -8,9 +8,6 @@ class MonthHistoryViewController: UIViewController {
     
     var months: [String]!
     
-    // 前画面に戻るボタン
-    private var backButton = UIButton()
-    
     // DBアクセサクラスのインスタンス化
     var repo: Repository = Repository()
     
@@ -28,22 +25,6 @@ class MonthHistoryViewController: UIViewController {
         horizontalBarChartView.drawBarShadowEnabled = false
         horizontalBarChartView.drawBordersEnabled = true
         horizontalBarChartView.descriptionText = "月毎の支出量グラフ"
-        
-        // 戻るボタンのインスタンス化
-        backButton = UIButton()
-        
-        // 戻るボタンを生成する
-        backButton.frame = CGRectMake(0, 0, 60, 60)
-        backButton.backgroundColor = UIColor.redColor()
-        backButton.setTitle("Back", forState: .Normal)
-        backButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        backButton.layer.masksToBounds = true
-        backButton.layer.cornerRadius = 30.0
-        backButton.layer.position = CGPointMake(self.view.frame.width/2, self.view.frame.height-100)
-        backButton.addTarget(self, action: #selector(MonthHistoryViewController.onClickbackButton(_:)), forControlEvents: .TouchUpInside)
-        
-        // 戻るボタンを追加する.
-        self.view.addSubview(backButton)
         
         // spendを全件取得する
         let spends = repo.findSpendList()
@@ -90,14 +71,6 @@ class MonthHistoryViewController: UIViewController {
         }
         setChart(months, values: sumMonth)
     }
-    
-    
-    /// 戻るボタンのアクション時に設定したメソッド
-    internal func onClickbackButton(sender: UIButton){
-        // 金額入力画面に戻る
-        performSegueWithIdentifier("historyToCalendar", sender: nil)
-    }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
