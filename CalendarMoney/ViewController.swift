@@ -20,8 +20,6 @@ extension UIColor {
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    private var saveButton = UIButton()
-    
     let dateManager = DateManager()
     let daysPerWeek: Int = 7
     let cellMargin: CGFloat = 2.0
@@ -63,20 +61,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         // カレンダーのヘッダにM/yyyy(今月)を代入
         headerTitle.text = changeHeaderTitle(selectedDate)
-        
-        // 支出入力画面遷移ボタンを生成する
-        saveButton = UIButton()
-        saveButton.frame = CGRectMake(0, 0, 60, 60)
-        saveButton.backgroundColor = UIColor.redColor()
-        saveButton.setTitle("Save", forState: .Normal)
-        saveButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        saveButton.layer.masksToBounds = true
-        saveButton.layer.cornerRadius = 30.0
-        saveButton.layer.position = CGPointMake(self.view.frame.width/2, self.view.frame.height-100)
-        saveButton.addTarget(self, action: #selector(ViewController.onClickbackButton(_:)), forControlEvents: .TouchUpInside)
-        
-        // 支出入力画面遷移ボタンを追加する.
-        self.view.addSubview(saveButton)
         
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -257,11 +241,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         print("touch2:\(indexPath.row)")
         print("touch:\(calendarLabels[indexPath.row])/\(headerTitle.text!)")
         appDelegate.selectedDate = "\(calendarLabels[indexPath.row])/\(headerTitle.text!)"
-    }
-    
-    /// 記録ボタンのアクション時に設定したメソッド
-    internal func onClickbackButton(sender: UIButton){
-        performSegueWithIdentifier("toMoneyInput", sender: nil)
     }
     
     @IBAction func swipedRight(sender: UISwipeGestureRecognizer) {

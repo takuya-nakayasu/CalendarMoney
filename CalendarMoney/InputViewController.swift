@@ -15,6 +15,12 @@ class InputViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    let formatter = NSDateFormatter()
+    
+    let moneyInputTextField = UITextField(frame: CGRectMake(0,0,200,30))
+    
+    let memoTextView = UITextView(frame: CGRectMake(0, 0, 200, 100))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,11 +58,7 @@ class InputViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath) 
-        
-        let moneyInputTextField = UITextField(frame: CGRectMake(0,0,200,30))
-        
-        let memoTextView = UITextView(frame: CGRectMake(0, 0, 200, 100))
+        let cell = tableView.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath)
         
         // キーボードを数字のみにする
         moneyInputTextField.keyboardType = .NumberPad
@@ -77,7 +79,6 @@ class InputViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         if indexPath.section == 0 {
             
-            let formatter = NSDateFormatter()
             formatter.dateFormat = "dd/MM/yyyy"
             
             let tmpDate = formatter.dateFromString(appDelegate.selectedDate!)!
@@ -111,8 +112,33 @@ class InputViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sectionTitle[section]
     }
+    @IBAction func onClickSaveButton(sender: AnyObject) {
+        
+        let repo = Repository()
+        
+        // Spendの既存ID最大値を取得
+        let maxId = repo.findMaxIdInSpend()
+        
+        let spend = Spend()
+        
+        formatter.dateFormat = "dd/MM/yyyy"
+        
+        // 既存データのID最大値+1
+        spend.id = maxId + 1
+        
+        spend.spendMoney = Int(moneyInputTextField.text!)!
+        
+        spend.memo = memoTextView.text!
+        
+        spend.spendDate = formatter.dateFromString(appDelegate.selectedDate!)!
+        
+        repo.saveSpend(spend)
+        
+        performSegueWithIdentifier("InputToTab", sender: nil)
+    }
     
     @IBAction func tapScreen(sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
+    
 }
