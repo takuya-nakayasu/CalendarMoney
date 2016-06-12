@@ -243,7 +243,25 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         appDelegate.selectedDate = "\(calendarLabels[indexPath.row])/\(headerTitle.text!)"
     }
     
+    @IBAction func headerSegmentedControlChanged(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            tappedPrevButton()
+        case 1:
+            tappedNextBtn()
+        default:
+            print("SegmentedControlChangedError")
+        }
+    }
     @IBAction func swipedRight(sender: UISwipeGestureRecognizer) {
+        tappedNextBtn()
+    }
+    
+    @IBAction func swipedLeft(sender: UISwipeGestureRecognizer) {
+        tappedPrevButton()
+    }
+    
+    func tappedNextBtn() {
         selectedDate = dateManager.nextMonth(selectedDate)
         print("selectedDate:\(selectedDate)")
         sum = sumSpendMoneyInMonth(selectedDate)
@@ -253,7 +271,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         calendarLabels = []
     }
     
-    @IBAction func swipedLeft(sender: UISwipeGestureRecognizer) {
+    func tappedPrevButton() {
         selectedDate = dateManager.prevMonth(selectedDate)
         print("selectedDate:\(selectedDate)")
         sum = sumSpendMoneyInMonth(selectedDate)
