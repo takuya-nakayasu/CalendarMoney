@@ -214,7 +214,7 @@
                             <outletCollection property="gestureRecognizers" destination="krw-IX-ISn" appends="YES" id="8So-do-7f2"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="カレンダー" id="4Uf-zc-wJ4"/>
+                    <tabBarItem key="tabBarItem" title="カレンダー" image="Calendar-30" id="4Uf-zc-wJ4"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -236,7 +236,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1953" y="-640"/>
+            <point key="canvasLocation" x="1874" y="-747"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="01w-PP-UO1">
@@ -301,7 +301,7 @@
                             <constraint firstItem="k4a-Iw-vHH" firstAttribute="top" secondItem="aHk-6N-66H" secondAttribute="top" id="dAY-Ba-xuf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="支出分析" id="C9M-Gc-f18"/>
+                    <tabBarItem key="tabBarItem" title="支出分析" image="Combo Chart-30" id="C9M-Gc-f18"/>
                     <connections>
                         <outlet property="horizontalBarChartView" destination="TLK-A8-s46" id="Hbg-hC-W8E"/>
                     </connections>
@@ -311,6 +311,10 @@
             <point key="canvasLocation" x="447" y="-450"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Calendar-30" width="30" height="30"/>
+        <image name="Combo Chart-30" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YZn-90-zVi"/>
     </inferredMetricsTieBreakers>
