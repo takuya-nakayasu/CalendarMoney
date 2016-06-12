@@ -254,11 +254,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     @IBAction func swipedRight(sender: UISwipeGestureRecognizer) {
-        tappedNextBtn()
+        tappedPrevButton()
     }
     
     @IBAction func swipedLeft(sender: UISwipeGestureRecognizer) {
-        tappedPrevButton()
+        tappedNextBtn()
     }
     
     func tappedNextBtn() {
