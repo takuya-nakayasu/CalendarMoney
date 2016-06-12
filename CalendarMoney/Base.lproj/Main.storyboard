@@ -165,7 +165,7 @@
                                         <rect key="frame" x="19" y="27" width="87" height="29"/>
                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="87" id="8y8-lz-OyW"/>
+                                            <constraint firstAttribute="width" constant="87" id="GFM-J1-zzJ"/>
                                         </constraints>
                                         <segments>
                                             <segment title="前月"/>
@@ -177,8 +177,11 @@
                                         </connections>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5g-IY-xAG">
-                                        <rect key="frame" x="501" y="25" width="30" height="30"/>
-                                        <state key="normal" title="2nd"/>
+                                        <rect key="frame" x="495" y="25" width="62" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="62" id="pGD-8I-14b"/>
+                                        </constraints>
+                                        <state key="normal" image="Create New-30"/>
                                         <connections>
                                             <segue destination="xwG-SZ-p2E" kind="presentation" id="WKd-Ei-LwR"/>
                                         </connections>
@@ -186,28 +189,28 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="lT6-rR-dfB" firstAttribute="top" secondItem="hmR-PK-Vuc" secondAttribute="top" constant="18" id="14i-cR-c1g"/>
-                                    <constraint firstAttribute="bottom" secondItem="HkJ-xP-phX" secondAttribute="bottom" constant="26" id="5CW-WR-c2K"/>
-                                    <constraint firstItem="u5g-IY-xAG" firstAttribute="top" secondItem="hmR-PK-Vuc" secondAttribute="top" constant="25" id="Fij-SE-hbv"/>
-                                    <constraint firstItem="LfW-Jm-sQb" firstAttribute="bottom" secondItem="u5g-IY-xAG" secondAttribute="bottom" id="Ozg-xo-YSu"/>
-                                    <constraint firstItem="HkJ-xP-phX" firstAttribute="top" secondItem="lT6-rR-dfB" secondAttribute="bottom" constant="8" symbolic="YES" id="cBd-h4-8oz"/>
-                                    <constraint firstItem="lT6-rR-dfB" firstAttribute="centerX" secondItem="hmR-PK-Vuc" secondAttribute="centerX" id="fIK-SJ-Cad"/>
-                                    <constraint firstAttribute="trailing" secondItem="u5g-IY-xAG" secondAttribute="trailing" constant="69" id="oow-2D-VNA"/>
-                                    <constraint firstItem="lT6-rR-dfB" firstAttribute="leading" secondItem="HkJ-xP-phX" secondAttribute="leading" id="pOl-9S-3xh"/>
-                                    <constraint firstItem="LfW-Jm-sQb" firstAttribute="leading" secondItem="hmR-PK-Vuc" secondAttribute="leading" constant="19" id="qMW-qT-waU"/>
+                                    <constraint firstItem="lT6-rR-dfB" firstAttribute="centerX" secondItem="hmR-PK-Vuc" secondAttribute="centerX" id="0O1-qZ-o4d"/>
+                                    <constraint firstItem="HkJ-xP-phX" firstAttribute="top" secondItem="lT6-rR-dfB" secondAttribute="bottom" constant="8" symbolic="YES" id="6Is-ui-vbG"/>
+                                    <constraint firstItem="lT6-rR-dfB" firstAttribute="top" secondItem="hmR-PK-Vuc" secondAttribute="top" constant="18" id="HGx-oo-NTF"/>
+                                    <constraint firstItem="u5g-IY-xAG" firstAttribute="top" secondItem="hmR-PK-Vuc" secondAttribute="top" constant="25" id="KuN-oG-NEH"/>
+                                    <constraint firstItem="lT6-rR-dfB" firstAttribute="leading" secondItem="HkJ-xP-phX" secondAttribute="leading" id="QPb-S2-0oe"/>
+                                    <constraint firstItem="LfW-Jm-sQb" firstAttribute="bottom" secondItem="u5g-IY-xAG" secondAttribute="bottom" id="UZX-TN-VbL"/>
+                                    <constraint firstAttribute="trailing" secondItem="u5g-IY-xAG" secondAttribute="trailing" constant="43" id="Zzr-A0-tzF"/>
+                                    <constraint firstAttribute="bottom" secondItem="HkJ-xP-phX" secondAttribute="bottom" constant="26" id="kkz-J9-7Pe"/>
+                                    <constraint firstItem="LfW-Jm-sQb" firstAttribute="leading" secondItem="hmR-PK-Vuc" secondAttribute="leading" constant="19" id="sRR-5N-gW6"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="7nr-2s-00v" firstAttribute="top" secondItem="hmR-PK-Vuc" secondAttribute="bottom" constant="8" symbolic="YES" id="3fD-vJ-Pav"/>
-                            <constraint firstItem="hmR-PK-Vuc" firstAttribute="trailing" secondItem="7nr-2s-00v" secondAttribute="trailing" id="9in-7M-WnX"/>
-                            <constraint firstItem="hmR-PK-Vuc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Gkh-11-Qlq"/>
-                            <constraint firstItem="hmR-PK-Vuc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QsM-2j-5c4"/>
-                            <constraint firstAttribute="bottom" secondItem="7nr-2s-00v" secondAttribute="bottom" id="TY3-B9-qKP"/>
-                            <constraint firstItem="hmR-PK-Vuc" firstAttribute="leading" secondItem="7nr-2s-00v" secondAttribute="leading" id="Xjl-Ry-XYD"/>
-                            <constraint firstAttribute="trailing" secondItem="hmR-PK-Vuc" secondAttribute="trailing" id="jRW-Ls-FMD"/>
+                            <constraint firstItem="hmR-PK-Vuc" firstAttribute="trailing" secondItem="7nr-2s-00v" secondAttribute="trailing" id="1Ar-Aq-gSa"/>
+                            <constraint firstItem="7nr-2s-00v" firstAttribute="top" secondItem="hmR-PK-Vuc" secondAttribute="bottom" constant="8" symbolic="YES" id="BQr-PD-rMs"/>
+                            <constraint firstAttribute="trailing" secondItem="hmR-PK-Vuc" secondAttribute="trailing" id="BmF-YE-0A5"/>
+                            <constraint firstItem="hmR-PK-Vuc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BmL-FM-s5G"/>
+                            <constraint firstAttribute="bottom" secondItem="7nr-2s-00v" secondAttribute="bottom" id="YSc-BI-qW6"/>
+                            <constraint firstItem="hmR-PK-Vuc" firstAttribute="leading" secondItem="7nr-2s-00v" secondAttribute="leading" id="edU-TI-27D"/>
+                            <constraint firstItem="hmR-PK-Vuc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jQA-O5-SOs"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="OMM-Pj-OoU" appends="YES" id="vTo-YH-xxx"/>
@@ -236,7 +239,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1874" y="-747"/>
+            <point key="canvasLocation" x="1883" y="-750"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="01w-PP-UO1">
@@ -314,6 +317,7 @@
     <resources>
         <image name="Calendar-30" width="30" height="30"/>
         <image name="Combo Chart-30" width="30" height="30"/>
+        <image name="Create New-30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YZn-90-zVi"/>
